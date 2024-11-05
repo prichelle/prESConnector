@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <array name="StreamingConfiguration" type="record" depth="1">
+      <record javaclass="com.wm.data.ISMemDataImpl">
+        <value name="name">prESConnector_presconnectorcommon</value>
+        <value name="description">demo to event streams</value>
+        <value name="package">prESConnector</value>
+        <value name="type">Kafka</value>
+        <value name="host">https://eem-gw-ibm-egw-rt-1-event.cp4i-bl-5b7e0d81360e5972646d63308bd04bf7-0000.eu-de.containers.appdomain.cloud:443</value>
+        <value name="clientId">ISe338e4e869</value>
+        <value name="other_properties">security.protocol=SASL_SSL
+ssl.protocol=TLSv1.3
+sasl.mechanism=PLAIN
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="eem-a0e0dbc4-fce5-499b-97f6-6b51a77e97d0" password="[*****]" ;
+bootstrap.servers=eem-gw-ibm-egw-rt-1-event.cp4i-bl-5b7e0d81360e5972646d63308bd04bf7-0000.eu-de.containers.appdomain.cloud:443
+ssl.endpoint.identification.algorithm=HTTPS</value>
+        <value name="other_runtime_properties">ssl.protocol=TLSv1.3
+bootstrap.servers=eem-gw-ibm-egw-rt-1-event.cp4i-bl-5b7e0d81360e5972646d63308bd04bf7-0000.eu-de.containers.appdomain.cloud:443
+security.protocol=SASL_SSL
+streaming.consumer.validate.consumers.not.greater.than.partitions=true
+sasl.mechanism=PLAIN
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="eem-a0e0dbc4-fce5-499b-97f6-6b51a77e97d0" password="[*****]" ;
+ssl.endpoint.identification.algorithm=HTTPS
+streaming.client.publish.mode=asynchronous</value>
+        <value name="enabled">true</value>
+        <value name="securityProtocol">SASL_SSL</value>
+        <value name="truststoreAlias">DEFAULT_IS_TRUSTSTORE</value>
+        <value name="keystoreAlias"></value>
+        <null name="keystoreKeyAlias"/>
+        <array name="subjects" type="record" depth="1">
+          <record javaclass="com.wm.data.ISMemDataImpl">
+            <value name="referenceId">Orders</value>
+            <value name="topicName">ORDERS.NEW</value>
+            <record name="keyCoder" javaclass="com.wm.data.ISMemDataImpl">
+              <value name="type">STRING</value>
+              <value name="type_display">String</value>
+              <record name="parameters" javaclass="com.wm.data.ISMemDataImpl">
+                <array name="nameValue" type="record" depth="1">
+                  <record javaclass="com.wm.data.ISMemDataImpl">
+                    <value name="name">charsetName</value>
+                    <value name="value">UTF-8</value>
+                  </record>
+                </array>
+              </record>
+              <value name="charsetName">UTF-8</value>
+            </record>
+            <record name="valueCoder" javaclass="com.wm.data.ISMemDataImpl">
+              <value name="type">JSON</value>
+              <value name="type_display">JSON</value>
+              <record name="parameters" javaclass="com.wm.data.ISMemDataImpl">
+                <array name="nameValue" type="record" depth="1">
+                  <record javaclass="com.wm.data.ISMemDataImpl">
+                    <value name="name">charsetName</value>
+                    <value name="value">UTF-8</value>
+                  </record>
+                  <record javaclass="com.wm.data.ISMemDataImpl">
+                    <value name="name">documentTypeName</value>
+                    <value name="value">pr.es.common.documents:orders</value>
+                  </record>
+                  <record javaclass="com.wm.data.ISMemDataImpl">
+                    <value name="name">schema</value>
+                    <null name="value"/>
+                  </record>
+                </array>
+              </record>
+              <value name="documentTypeName">pr.es.common.documents:orders</value>
+              <value name="charsetName">UTF-8</value>
+              <null name="schema"/>
+            </record>
+            <value name="aliasName">prESConnector_presconnectorcommon</value>
+          </record>
+        </array>
+      </record>
+      <record javaclass="com.wm.data.ISMemDataImpl">
+        <value name="name">prESConnector_EventStreams</value>
+        <value name="description">connection to ES direclty using SHA512</value>
+        <value name="package">prESConnector</value>
+        <value name="type">Kafka</value>
+        <value name="host">https://es-small-kafka-bootstrap-event.cp4i-bl-5b7e0d81360e5972646d63308bd04bf7-0000.eu-de.containers.appdomain.cloud:443</value>
+        <value name="clientId">ISc7d0484b3b</value>
+        <value name="other_properties">security.protocol=SASL_SSL
+sasl.mechanism=SCRAM-SHA-512
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="es-webmethods" password="[*****]" ;
+bootstrap.servers=es-small-kafka-bootstrap-event.cp4i-bl-5b7e0d81360e5972646d63308bd04bf7-0000.eu-de.containers.appdomain.cloud:443</value>
+        <value name="other_runtime_properties">security.protocol=SASL_SSL
+streaming.consumer.validate.consumers.not.greater.than.partitions=true
+sasl.mechanism=SCRAM-SHA-512
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="es-webmethods" password="[*****]" ;
+bootstrap.servers=es-small-kafka-bootstrap-event.cp4i-bl-5b7e0d81360e5972646d63308bd04bf7-0000.eu-de.containers.appdomain.cloud:443
+streaming.client.publish.mode=asynchronous</value>
+        <value name="enabled">false</value>
+        <value name="securityProtocol">SASL_SSL</value>
+        <value name="truststoreAlias">DEFAULT_IS_TRUSTSTORE</value>
+        <value name="keystoreAlias"></value>
+        <null name="keystoreKeyAlias"/>
+        <array name="subjects" type="record" depth="1">
+        </array>
+      </record>
+    </array>
+  </record>
+</IDataXMLCoder>
